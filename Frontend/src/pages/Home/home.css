@@ -1,0 +1,238 @@
+.home {
+    padding-top: 80px;
+    /* Offset for fixed navbar */
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.homefirst-section {
+    height: calc(100vh - 80px);
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-image: linear-gradient(rgba(2, 6, 23, 0.4), rgba(2, 6, 23, 0.8)), url("https://res.cloudinary.com/df8pktsi5/image/upload/v1772537576/frontend-assets/kxenfzcluw3kbmqnqtfr.avif");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.homefirst-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, transparent 0%, var(--bg-darker) 100%);
+    pointer-events: none;
+}
+
+.homefirst-section .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 2rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    letter-spacing: -2px;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* About Section */
+.homesecond-section {
+    padding: 100px 5%;
+    background: var(--bg-dark);
+    position: relative;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.leftpart {
+    flex: 1;
+}
+
+.leftpart .abouth {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(to right, #fff, var(--text-muted));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.leftpart .about {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature-item h3 {
+    font-size: 1.25rem;
+    color: var(--text-main);
+    margin-bottom: 0.75rem;
+}
+
+.feature-item p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.rightpart {
+    flex: 1;
+    position: relative;
+}
+
+.rightpart img {
+    width: 100%;
+    border-radius: 24px;
+    box-shadow: var(--shadow-lg), 0 0 40px rgba(99, 102, 241, 0.2);
+    transition: var(--transition);
+}
+
+.rightpart:hover img {
+    transform: scale(1.02);
+}
+
+/* Artist Section */
+.homethird-section {
+    padding: 100px 5%;
+    background: var(--bg-darker);
+    text-align: center;
+}
+
+.meet h1 {
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    color: var(--text-main);
+}
+
+.artist {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.names img,
+.rightimg img,
+.rightimg1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: var(--transition);
+    filter: grayscale(20%);
+}
+
+.names img:hover,
+.rightimg img:hover,
+.rightimg1 img:hover {
+    filter: grayscale(0%);
+    transform: translateY(-10px);
+}
+
+.names {
+    height: 600px;
+}
+
+.names1 {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.rightimg,
+.rightimg1 {
+    height: 284px;
+}
+
+/* Contact Section Container */
+.contact {
+    padding: 0;
+    background: var(--bg-dark);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .center {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .leftpart {
+        padding: 0;
+    }
+
+    .artist {
+        grid-template-columns: 1fr;
+    }
+
+    .names {
+        height: 400px;
+    }
+
+    .names1 {
+        flex-direction: row;
+    }
+
+    .rightimg,
+    .rightimg1 {
+        flex: 1;
+        height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .leftpart .abouth {
+        font-size: 2rem;
+    }
+
+    .names1 {
+        flex-direction: column;
+    }
+}

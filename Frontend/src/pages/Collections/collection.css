@@ -1,0 +1,122 @@
+.my-orders {
+    padding-top: 120px;
+    padding-bottom: 50px;
+    min-height: 100vh;
+    background: var(--bg-dark);
+}
+
+.my-orders .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.my-orders-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.my-orders-header h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(to right, #fff, var(--text-muted));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.my-orders-order {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 1.5rem 2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    transition: var(--transition);
+}
+
+.my-orders-order:hover {
+    background: var(--glass-hover);
+    border-color: var(--primary);
+    transform: translateX(5px);
+}
+
+.order-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.order-item-title {
+    font-weight: 700;
+    color: var(--text-main);
+    font-size: 1.1rem;
+}
+
+.order-item-meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.order-amount {
+    font-weight: 700;
+    color: var(--text-main);
+    font-size: 1.1rem;
+}
+
+.order-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.order-status.processing {
+    color: #f59e0b;
+}
+
+.order-status.delivered {
+    color: #10b981;
+}
+
+.order-status.cancelled {
+    color: #ef4444;
+}
+
+.order-payment {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.track-btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    min-width: 100px;
+}
+
+@media (max-width: 850px) {
+    .my-orders-order {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+    }
+
+    .order-items-list {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .my-orders-order {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+
+    .order-items-list {
+        grid-column: span 1;
+    }
+}
