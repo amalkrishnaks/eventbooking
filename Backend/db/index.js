@@ -7,7 +7,7 @@ const maskedURL = mongoURL.replace(/:([^:@]{1,})@/, ':****@');
 console.log("Attempting to connect to DB:", maskedURL);
 
 mongoose.connect(mongoURL)
-    .then(() => console.log("✅ SUCCESS: Connected to MongoDB Atlas!"))
+    .then(() => console.log("✅ SUCCESS: Connect to MongoDB Atlas!"))
     .catch((err) => {
         console.error("❌ ERROR: Connection failed.");
         console.error("Error Code:", err.code);
