@@ -24,13 +24,14 @@ const Booking = () => {
         address: booking,
         items: event,
         amount: totalPrice,
-
+        eventId: event._id,
+        ticketCount: ticketCount
     }
 
 
     const handlePayment = async () => {
-        const response = await axios.post('/order/create', orderData, { amount: totalPrice });
-        const orderId = response?.data?._doc?._id
+        const response = await axios.post('/order/create', orderData);
+        const orderId = response?.data?._id || response?.data?._doc?._id;
 
         const options = {
             key: "rzp_test_0UhirLOMorKmkZ",

@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const env = require('dotenv/config');
+const http = require('http');
+const { Server } = require('socket.io');
 const app = express();
 const PORT = process.env.PORT || 4000;
 
@@ -43,7 +45,23 @@ app.use('*', (req, res) => {
   return res.status(404).json({ message: "No Page Found" });
 })
 
+const server = http.createServer(app);
+const io = new Server(server, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"]
+  }
+});
 
-app.listen(PORT, () => {
+app.set('io', io);
+
+io.on('connection', (socket) => {
+  console.log('⚡ User connected:', socket.id);
+  socket.on('disconnect', () => {
+    console.log('❌ User disconnected');
+  });
+});
+
+server.listen(PORT, () => {
   console.log(`app is running @ http://localhost:${PORT}/`);
 })

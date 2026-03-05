@@ -1,19 +1,20 @@
-const {Schema,model}=require('mongoose');
+const { Schema, model } = require('mongoose');
 
 
-    const orderSchema=Schema({
+const orderSchema = Schema({
 
-        eventId:{type:String},
-        items:{type:Array,required:true},
-        amount:{type:Number},
-        address:{type:Object},
-        status:{type:String,default:'Order Intializing'},
-        date:{type:Date,default:Date.now()},
-        payment:{type:Boolean,default:false},
-        
-    })
+    eventId: { type: String },
+    items: { type: Array, required: true },
+    amount: { type: Number },
+    address: { type: Object },
+    status: { type: String, default: 'Order Intializing' },
+    date: { type: Date, default: Date.now() },
+    payment: { type: Boolean, default: false },
+    ticketCount: { type: Number, default: 1 }
+
+})
 
 
-  const Order =model("Orders", orderSchema);
+const Order = model("Orders", orderSchema);
 
-  module.exports=Order;
+module.exports = Order;

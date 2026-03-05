@@ -4,6 +4,11 @@ import axios from '../../Utils/axios';
 import Modal from '../../Components/Modal/modal';
 import './details.css';
 import Footer from '../../Components/Footer/footer';
+import { io } from 'socket.io-client';
+
+const socket = io(import.meta.env.VITE_BACKEND_URL || 'http://localhost:4000', {
+    transports: ['websocket']
+});
 
 
 const Details = () => {
@@ -20,7 +25,17 @@ const Details = () => {
         axios.get(`/user/details/${eventId}`).then((res) => {
             setEvent(res.data);
         })
-    }, [])
+
+        socket.on('seatUpdated', (data) => {
+            if (data.eventId === eventId) {
+                setEvent(prev => ({ ...prev, availableseats: data.newAvailableSeats }));
+            }
+        });
+
+        return () => {
+            socket.off('seatUpdated');
+        };
+    }, [eventId])
 
     const onClick = () => {
         setShowDeleteModal(true)
@@ -53,7 +68,19 @@ const Details = () => {
                         <p>{event.description}</p>
                     </div>
 
-                    <button onClick={onClick} className='btn2'>Purchase Ticket</button>
+                    <div className="seat-status">
+                        <span className={event.availableseats > 0 ? 'seats-pill' : 'sold-pill'}>
+                            {event.availableseats > 0 ? `${event.availableseats} Seats Remaining` : 'Fully Booked'}
+                        </span>
+                    </div>
+
+                    <button
+                        onClick={onClick}
+                        className='btn2'
+                        disabled={event.availableseats <= 0}
+                    >
+                        {event.availableseats > 0 ? 'Purchase Ticket' : 'Sold Out'}
+                    </button>
                 </div>
             </div>
 

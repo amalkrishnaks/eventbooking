@@ -98,7 +98,7 @@
 
 .nav-profile-dropdown {
     position: absolute;
-    top: 50px;
+    top: 40px;
     right: 0;
     background: var(--bg-darker);
     border: 1px solid var(--glass-border);

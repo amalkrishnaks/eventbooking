@@ -85,7 +85,10 @@ const AddEvents = () => {
               <option>Alappuzha</option>
               <option>Varkala</option>
               <option>New York</option>
-              <option>Coimbatore</option>
+              <option>Coimbatore</option> 
+              <option>Pune</option>
+              <option>Singapore</option>
+              <option>New Delhi</option>
             </select>
             <p>Address</p>
             <Input onChange={e => { onChange(e, 'address') }} type='text' placeholder='Full address' required />
