@@ -152,9 +152,34 @@
     margin-top: 100px;
 }
 
+@media (max-width: 900px) {
+    .filter-bar {
+        border-radius: 24px;
+        padding: 1.25rem;
+    }
+
+    .filter-item input {
+        min-width: 100%;
+        width: 100%;
+    }
+}
+
 @media (max-width: 600px) {
+    .event-header h1 {
+        font-size: 2.25rem;
+    }
+
+    .filter-bar {
+        gap: 1rem;
+    }
+
     .event-card {
         grid-template-columns: 1fr;
         padding: 0 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .event-card-model .img-container {
+        height: 200px;
     }
 }

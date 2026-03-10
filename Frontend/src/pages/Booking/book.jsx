@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from '../../Utils/axios'
+import axios from '../../services/axios'
 import { ToastContainer, toast } from 'react-toastify';
 import { useLocation, useParams } from 'react-router-dom';
 import './book.css';
@@ -48,6 +48,9 @@ const Booking = () => {
                     orderId
                 });
                 toast.success("Payment successful!");
+                setTimeout(() => {
+                    window.location.href = '/collections';
+                }, 2000);
             }
 
         }

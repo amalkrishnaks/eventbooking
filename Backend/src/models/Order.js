@@ -10,6 +10,7 @@ const orderSchema = Schema({
     status: { type: String, default: 'Order Intializing' },
     date: { type: Date, default: Date.now() },
     payment: { type: Boolean, default: false },
+    userId: { type: String, required: true },
     ticketCount: { type: Number, default: 1 }
 
 })

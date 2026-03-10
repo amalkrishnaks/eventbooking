@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from '../../Utils/axios';
+import axios from '../../services/axios';
 import './events.css';
 import Footer from '../../Components/Footer/footer';
 import { io } from 'socket.io-client';

@@ -1,9 +1,9 @@
-import { Outlet,Navigate } from "react-router-dom";
-import { checkToken } from "../../Utils/check-token";
+import { Outlet, Navigate } from "react-router-dom";
+import { checkToken } from "../../services/check-token";
 
-const PrivateRoute=()=>{
+const PrivateRoute = () => {
 
-    return checkToken() ? <Outlet/> : <Navigate to='/'/>
+    return checkToken() ? <Outlet /> : <Navigate to='/' />
 }
 
 export default PrivateRoute;

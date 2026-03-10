@@ -18,7 +18,9 @@
 .place-booking-left {
     background: var(--bg-darker);
     border: 1px solid var(--glass-border);
-    padding: 3rem;
+    padding: 3rem 1rem;
+    width: 100%;
+    max-width: 500px;
     border-radius: 24px;
     box-shadow: var(--shadow-lg);
 }
@@ -138,6 +140,12 @@
 @media (max-width: 968px) {
     .place-booking {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .place-booking-left {
+        width: 100%;
+        max-width: none;
     }
 
     .place-booking-right {
@@ -148,9 +156,23 @@
 @media (max-width: 600px) {
     .place-booking-left .multi-fields {
         grid-template-columns: 1fr;
+        gap: 0;
     }
 
     .place-booking-left {
-        padding: 2rem;
+        padding: 1.5rem;
+    }
+
+    .place-booking-left .title {
+        font-size: 2rem;
+    }
+
+    .booking-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .place-booking-right {
+        padding: 1.5rem;
     }
 }

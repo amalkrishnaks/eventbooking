@@ -1,4 +1,4 @@
-import { checkToken } from '../../Utils/check-token';
+import { checkToken } from '../../services/check-token';
 import { useNavigate } from 'react-router-dom';
 import './navbar.css';
 import { Link } from 'react-router-dom';
@@ -19,7 +19,8 @@ const Navbar = ({ setShowLogin }) => {
     return (
         <div className="navbar">
             <div className="navbar-menu">
-                <h2>AK Event Booking</h2>
+                {/* <img className='logo' src='https://res.cloudinary.com/df8pktsi5/image/upload/v1772696644/Logo_event_vjeqge.png'></img> */}
+                <h2>Event Hub</h2>
             </div>
             <ul className={`navbar-right ${isOpen ? "active" : ""}`}>
                 <Link className='link' to='/' >Home</Link>

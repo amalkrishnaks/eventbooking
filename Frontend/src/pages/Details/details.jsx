@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from '../../Utils/axios';
+import axios from '../../services/axios';
 import Modal from '../../Components/Modal/modal';
 import './details.css';
 import Footer from '../../Components/Footer/footer';

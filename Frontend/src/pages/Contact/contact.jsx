@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Footer from '../../Components/Footer/footer';
 import './contact.css';
-import axios from '../../Utils/axios.js';
+import axios from '../../services/axios.js';
 
 
 
