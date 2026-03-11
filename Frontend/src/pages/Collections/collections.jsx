@@ -85,13 +85,13 @@ const Collections = () => {
                                             onClick={() => setShowTicket(order)}
                                         >
                                             <i className="fa-solid fa-qrcode"></i> View Ticket
-                                        </button>
+                                        </button> 
                                         <button
                                             className='primary-btn cancel-btn'
                                             onClick={() => cancelBooking(order._id)}
                                         >
                                             Cancel
-                                        </button>
+                                        </button> 
                                     </>
                                 )}
                                 <button className='primary-btn track-btn' title="Refresh Status" onClick={fetchOrder}>
