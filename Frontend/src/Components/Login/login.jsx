@@ -35,11 +35,11 @@ const Login = ({ setShowLogin }) => {
 
 
         } catch (e) {
-            console.log(e);
-            toast.error('Email or Password Incorrect')
+            console.error('Login Error:', e);
+            const errorMessage = e?.response?.data?.message || e.message || 'Email or Password Incorrect';
+            toast.error(errorMessage);
         }
     }
-    console.log(login);
 
 
 
